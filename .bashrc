@@ -5,7 +5,7 @@
 [[ $- != *i* ]] && return
 
 export PATH="/Users/$(whoami)/.homebrew/bin:/Users/$(whoami)/.homebrew/sbin:$PATH"
-export PATH="$PATH:/Users/$(whoami)/devel/depot_tools"
+export PATH="$PATH:/Users/$(whoami)/Tools"
 
 export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 
