@@ -1,8 +1,10 @@
 highlight Search term=underline cterm=underline ctermbg=Brown gui=underline guibg=Brown
 set hlsearch
 
+highlight CursorLineNr cterm=underline
 highlight LineNr ctermbg=Black ctermfg=White cterm=bold
 set number
+set cursorline
 
 set smartindent
 set tabstop=4
