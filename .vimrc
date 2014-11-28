@@ -11,3 +11,6 @@ filetype plugin indent on
 syntax on
 set listchars=trail:·,precedes:⇄,extends:⇄,eol:↵,tab:⇥ ,conceal:…,nbsp:⎵
 set list
+
+set ruler
+set rulerformat=[L:%l,C:%v]
