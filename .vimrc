@@ -20,3 +20,9 @@ set list
 
 set ruler
 set rulerformat=[L:%l,C:%v]
+
+" mac-book bro/emacs key bindings workaround:
+nmap <C-e> $
+imap <C-e> <Esc>$i<Right>
+nmap <C-a> 0
+imap <C-a> <Esc>0i
