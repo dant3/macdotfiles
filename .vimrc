@@ -32,6 +32,7 @@ set list
 " mac-book bro/emacs key bindings workaround:
 nmap <C-e> $
 imap <C-e> <Esc>$i<Right>
+cmap <C-a> <C-b>
 nmap <C-a> 0
 imap <C-a> <Esc>0i
 
