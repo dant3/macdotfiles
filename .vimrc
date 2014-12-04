@@ -34,3 +34,6 @@ nmap <C-e> $
 imap <C-e> <Esc>$i<Right>
 nmap <C-a> 0
 imap <C-a> <Esc>0i
+
+" enable pathogen
+call pathogen#infect()
