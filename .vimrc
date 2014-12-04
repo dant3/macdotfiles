@@ -26,8 +26,8 @@ set listchars=trail:·,precedes:⇄,extends:⇄,eol:↵,tab:⇥ ,conceal:…,nb
 set list
 
 " bottom-right line and column info
-set ruler
-set rulerformat=[L:%l,C:%v]
+"set ruler
+"set rulerformat=[L:%l,C:%v]
 
 " mac-book bro/emacs key bindings workaround:
 nmap <C-e> $
@@ -37,3 +37,19 @@ imap <C-a> <Esc>0i
 
 " enable pathogen
 call pathogen#infect()
+
+" airline tuneup
+" no more default mode required
+set noshowmode
+set laststatus=2
+" might require fonts installation, see
+" https://powerline.readthedocs.org/en/latest/installation.html#fonts-installation
+let g:airline_powerline_fonts = 1
+
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+let g:airline_symbols.space = "\ua0"
+
+" tabs on top
+let g:airline#extensions#tabline#enabled = 1
