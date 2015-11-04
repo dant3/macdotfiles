@@ -4,15 +4,17 @@
 
 [[ $- != *i* ]] && return
 
+export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
 
 export PGDATA='/usr/local/var/postgres'
 export PGHOST=localhost
 
 export ANDROID_HOME="${HOME}/Tools/android-sdk"
+export ANDROID_SDK="${ANDROID_HOME}"
 
 export PATH="${HOME}/.homebrew/bin:/Users/$(whoami)/.homebrew/sbin:$PATH"
 export PATH="$PATH:${HOME}/Tools"
-export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
+export PATH="$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools"
 
 export LESS="-R"
 export EDITOR="vim"
