@@ -5,6 +5,9 @@
 [[ $- != *i* ]] && return
 
 
+export PGDATA='/usr/local/var/postgres'
+export PGHOST=localhost
+
 export ANDROID_HOME="${HOME}/Tools/android-sdk"
 
 export PATH="${HOME}/.homebrew/bin:/Users/$(whoami)/.homebrew/sbin:$PATH"
