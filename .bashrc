@@ -41,7 +41,7 @@ BG_YELLOW_COLOR=$(tput setab 3)
 RESET=$(tput sgr0)
 
 # old prompt:
-PS1='\[$VIOLET_COLOR\]ð   `date`\[$RESET\]\n\[$YELLOW_COLOR\]\u@\h\[$RESET\]:\[$GREEN_COLOR\]\w\[$RESET\]$(__git_ps1 " ⚡  \[$RED_COLOR\]%s\[$RESET\]")> '
+PS1='\[$VIOLET_COLOR\]ð   `date`\[$RESET\] $(__git_ps1 "⚡  \[$RED_COLOR\]%s\[$RESET\]")\n\[$YELLOW_COLOR\]\u@\h\[$RESET\]:\[$GREEN_COLOR\]\w\[$RESET\]> '
 
 
 HISTCONTROL=ignoreboth
