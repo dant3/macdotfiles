@@ -30,7 +30,12 @@ install_brew() {
 
 create_symlink_for() {
     for filename in $1; do
-        ln -s $SCRIPT_DIR/$filename ~/ || fail
+        if [ -f $HOME/$filename ];
+        then
+            mkdir -p $SCRIPT_DIR/.backup/
+            mv -v $HOME/$filename $SCRIPT_DIR/.backup/
+        fi
+        ln -s $SCRIPT_DIR/$filename $HOME/ || fail
     done
 }
 
