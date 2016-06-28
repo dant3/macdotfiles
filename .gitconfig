@@ -18,3 +18,7 @@
 	default = matching
 [gui]
 	gcwarning = false
+[pull]
+	rebase = true
+[rebase]
+	autoStash = true
