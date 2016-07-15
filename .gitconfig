@@ -15,10 +15,14 @@
 	textconv = "iconv -f utf-16 -t utf-8"
 
 [push]
-	default = matching
+	default = current
 [gui]
 	gcwarning = false
 [pull]
 	rebase = true
 [rebase]
 	autoStash = true
+[transfer]
+	fsckobjects = true
+[fetch]
+	fsckobjects = true
