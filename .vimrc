@@ -37,7 +37,8 @@ nmap <C-a> 0
 imap <C-a> <Esc>0i
 
 " enable pathogen
-call pathogen#infect()
+runtime bundle/vim-pathogen/autoload/pathogen.vim
+execute pathogen#infect()
 
 " airline tuneup
 " no more default mode required
