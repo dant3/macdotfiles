@@ -26,3 +26,5 @@
 	fsckobjects = true
 [fetch]
 	fsckobjects = true
+[status]
+	submodulesummary = 1
