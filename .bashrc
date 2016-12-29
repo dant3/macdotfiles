@@ -9,11 +9,22 @@ export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
 export PGDATA='/usr/local/var/postgres'
 export PGHOST=localhost
 
-export ANDROID_HOME="${HOME}/Tools/android-sdk"
+if [ -d "${HOME}/.homebrew" ]; then
+    export BREW_HOME="${HOME}/.homebrew"
+elif [ -d "${HOME}/.linuxbrew" ]; then
+    export BREW_HOME="${HOME}/.linuxbrew"
+fi
+
+if [ -d "${BREW_HOME}" ]; then
+    export PATH="${BREW_HOME}/bin:${BREW_HOME}/sbin:$PATH"
+fi
+
+export TOOLS_DIR="${HOME}/Tools/"
+export PATH="$PATH:${TOOLS_DIR}"
+
+export ANDROID_HOME="${TOOLS_DIR}/android-sdk"
 export ANDROID_SDK="${ANDROID_HOME}"
 
-export PATH="${HOME}/.homebrew/bin:/Users/$(whoami)/.homebrew/sbin:$PATH"
-export PATH="$PATH:${HOME}/Tools"
 export PATH="$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools"
 
 export LESS="-R"
