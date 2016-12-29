@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
@@ -30,7 +30,7 @@ install_brew() {
 
 create_symlink_for() {
     for filename in $1; do
-        if [ -f $HOME/$filename || -d $HOME/$filename ];
+        if [ -f $HOME/$filename ] || [ -d $HOME/$filename ];
         then
             mkdir -p $SCRIPT_DIR/.backup/
             mv -v $HOME/$filename $SCRIPT_DIR/.backup/
