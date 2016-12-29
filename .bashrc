@@ -78,8 +78,8 @@ shopt -s cdspell
 
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
-if [ -f ~/Tools/mvncolor/mvncolor.sh ]; then
-  . ~/Tools/mvncolor/mvncolor.sh
+if [ -f ${TOOLS_DIR}/mvncolor/mvncolor.sh ]; then
+  . ${TOOLS_DIR}/mvncolor/mvncolor.sh
 fi
 
 export HOMEBREW_GITHUB_API_TOKEN=540c5380201c354c7fdb79a181021cf82e4b1666
