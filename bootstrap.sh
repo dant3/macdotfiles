@@ -45,6 +45,7 @@ link_dotfiles() {
     create_symlink_for ".git?*" || fail
     create_symlink_for ".hg?*" || fail
     create_symlink_for ".vimrc" || fail
+    create_symlink_for ".vim" || fail
     popd || fail
     echo "-- dotfiles has been sucessfully linked"
 }
