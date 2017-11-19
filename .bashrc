@@ -2,6 +2,28 @@
 # ~/.bashrc
 #
 
+is_osx() {
+    if [ "`uname`" != 'Darwin' ]; then
+        return 0
+    else
+        return 1
+    fi
+}
+source_dir() {
+  DIR=$1/*
+  #echo "Sourcing directory $DIR"
+  for SCRIPT in $DIR; do
+    #echo "Sourcing $SCRIPT"
+    if [ ! -d $SCRIPT ]; then
+    #if [ -d $SCRIPT ]; then
+    #  source_dir $SCRIPT
+    #else
+      . $SCRIPT
+    fi
+    #echo "$SCRIPT sourced"
+  done
+}
+
 [[ $- != *i* ]] && return
 
 if [ -f /usr/libexec/java_home ]; then
@@ -75,11 +97,7 @@ fi
 if [ -f `brew --prefix`/etc/bash_completion ]; then
   . `brew --prefix`/etc/bash_completion
 fi
-if [ -d `brew --prefix`/etc/bash_completion.d ]; then
-  for SCRIPT in $(brew --prefix)/etc/bash_completion.d/*; do
-    . $SCRIPT
-  done
-fi
+
 # sources /etc/bash.bashrc).
 if ! shopt -oq posix; then
   if [ -f /usr/share/bash-completion/bash_completion ]; then
@@ -92,10 +110,15 @@ fi
 shopt -s checkwinsize
 shopt -s cdspell
 
+if [ -d `brew --prefix`/etc/bash_completion.d ]; then
+  source_dir $(brew --prefix)/etc/bash_completion.d
+fi
+
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
 if [ -f ${TOOLS_DIR}/mvncolor/mvncolor.sh ]; then
   . ${TOOLS_DIR}/mvncolor/mvncolor.sh
 fi
 
+unset -f source_dir
 export HOMEBREW_GITHUB_API_TOKEN=540c5380201c354c7fdb79a181021cf82e4b1666
