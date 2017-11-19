@@ -30,10 +30,14 @@ install_brew() {
 
 create_symlink_for() {
     for filename in $1; do
-        if [ -f $HOME/$filename ] || [ -d $HOME/$filename ];
+        HOMEFILE="$HOME/$filename"
+        if [ -f $HOMEFILE ] || [ -d $HOMEFILE ];
         then
             mkdir -p $SCRIPT_DIR/.backup/
             mv -v $HOME/$filename $SCRIPT_DIR/.backup/
+        elif [ -L $HOMEFILE ]; # broken symlink
+        then
+            unlink $HOMEFILE
         fi
         ln -s $SCRIPT_DIR/$filename $HOME/ || fail
     done
