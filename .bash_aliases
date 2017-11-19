@@ -3,7 +3,7 @@ source "`brew --prefix`/etc/grc.bashrc"
 alias nano='nano -c'
 
 # colors support
-if [ is_osx ]; then
+if [ ! is_osx ]; then
     alias ls='ls --color=auto'
     #alias dir='dir --color=auto'
     #alias vdir='vdir --color=auto'
