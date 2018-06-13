@@ -22,3 +22,5 @@ alias pg-start='pg_ctl -l $PGDATA/server.log start'
 alias pg-stop='pg_ctl stop -m fast'
 alias pg-status='pg_ctl status'
 alias pg-restart='pg_ctl reload'
+
+alias macos-ovpn-fix='sudo ifconfig en0 down && sudo route flush && sudo ifconfig en0 up'
