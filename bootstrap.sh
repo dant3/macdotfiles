@@ -44,13 +44,19 @@ create_symlink_for() {
 }
 
 link_dotfiles() {
+    sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
     pushd $SCRIPT_DIR || fail
     create_symlink_for ".bash*" || fail
     create_symlink_for ".git?*" || fail
     create_symlink_for ".hg?*" || fail
     create_symlink_for ".vimrc" || fail
     create_symlink_for ".vim" || fail
+    create_symlink_for ".zsh*" || fail
     popd || fail
+    pushd ~/.vim || fail
+    git submodule update --init --recursive
+    popd || fail
+    cp -Rv $SCRIPT_DIR/.oh-my-zsh/* ~/.oh-my-zsh
     echo "-- dotfiles has been sucessfully linked"
 }
 
