@@ -2,6 +2,8 @@ if [ -d "${HOME}/.homebrew" ]; then
     export BREW_HOME="${HOME}/.homebrew"
 elif [ -d "${HOME}/.linuxbrew" ]; then
     export BREW_HOME="${HOME}/.linuxbrew"
+elif [ -f "/opt/homebrew/bin/brew" ]; then
+    eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
 if [ -d "${BREW_HOME}" ]; then
@@ -11,7 +13,11 @@ fi
 export TOOLS_DIR="${HOME}/Tools/"
 export PATH="$PATH:${TOOLS_DIR}"
 
-export ANDROID_HOME="${TOOLS_DIR}/android-sdk"
-export ANDROID_SDK="${ANDROID_HOME}"
+export ANDROID_HOME="${HOME}/Library/Android/sdk"
+#export ANDROID_SDK="${ANDROID_HOME}"
 
-export PATH="$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools"
+export PATH="$PATH:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/cmdline-tools/latest/bin"
+export PATH=~/Tools/depot_tools:$PATH
+
+#IGNITE_CLI_PATH="${TOOLS_DIR}/ignite-cli/gridgain9-cli-9.0.127-SNAPSHOT/bin"
+#export PATH="$PATH:$IGNITE_CLI_PATH"

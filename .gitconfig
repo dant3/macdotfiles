@@ -9,7 +9,8 @@
 
 [core] 
 	whitespace=-indent-with-non-tab,trailing-space,cr-at-eol,tab-in-indent
-	excludesfile = ~/.gitexcludes
+	excludesfile = /Users/dant3/.gitexcludes
+	filemode = false
 
 [diff "localizablestrings"]
 	textconv = "iconv -f utf-16 -t utf-8"
@@ -19,12 +20,14 @@
 [gui]
 	gcwarning = false
 [pull]
-	rebase = true
+	rebase = false
 [rebase]
 	autoStash = true
 [transfer]
 	fsckobjects = true
 [fetch]
 	fsckobjects = true
+[fsck]
+	zeroPaddedFilemode = ignore
 [status]
 	submodulesummary = 1

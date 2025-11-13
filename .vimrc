@@ -6,6 +6,10 @@ set hlsearch
 "highlight CursorLineNr cterm=underline
 "set cursorline
 
+" allow backspacing over everything in insert mode
+set backspace=indent,eol,start
+
+
 " Line numbers
 highlight LineNr ctermbg=Black ctermfg=White cterm=bold
 set number
